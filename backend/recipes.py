@@ -11,7 +11,21 @@ recipe_model = recipe_ns.model(
     {
         "id" :fields.Integer(),
         "title":fields.String(),
-        "description":fields.String()
+        "description":fields.String(),
+        "full_name":fields.String(),
+        "cin": fields.String(),
+        "phone_number": fields.String(),
+        "email": fields.String(),
+        "age": fields.Integer(),
+        "gender": fields.String(),
+        "state": fields.String(),
+        "city": fields.String(),
+        "address": fields.String(),
+        "marital_status": fields.String(),
+        "nbr_of_children": fields.Integer(),
+        "occupation": fields.String(),
+        "salary": fields.Float()
+
     }
 )
 
@@ -46,8 +60,21 @@ class RecipesResource(Resource) :
         
         new_recipe = Recipe(
             title=data.get('title'),
-            description=data.get('description')
-        )    
+            description=data.get('description'),
+            full_name=data.get('full name'),
+            cin=data.get('cin'),
+            phone_number=data.get('phone_number'),
+            email=data.get('email'),
+            age=data.get('age'),
+            gender=data.get('gender'),
+            state=data.get('state'),
+            city=data.get('city'),
+            address=data.get('address'),
+            marital_status=data.get('marital_status'),
+            nbr_of_children=data.get('nbr_of_children', 0),  # Default to 0 if not provided
+            occupation=data.get('occupation'),
+            salary=data.get('salary')
+        )
         
         new_recipe.save()
         

@@ -13,6 +13,19 @@ class Recipe(db.Model):
     id=db.Column(db.Integer(),primary_key=True)     
     title=db.Column(db.String(),nullable=False)
     description=db.Column(db.Text(),nullable=False)
+    full_name = db.Column(db.String(100), nullable=False)
+    cin = db.Column(db.String(50), nullable=False, unique=True)  
+    phone_number = db.Column(db.String(20), nullable=False)  
+    email = db.Column(db.String(120), nullable=False, unique=True)  
+    age = db.Column(db.Integer(), nullable=False)  
+    gender = db.Column(db.String(10), nullable=False)  
+    state = db.Column(db.String(50), nullable=False)  
+    city = db.Column(db.String(50), nullable=False)  
+    address = db.Column(db.Text(), nullable=False)  
+    marital_status = db.Column(db.String(20), nullable=False)  
+    nbr_of_children = db.Column(db.Integer(), default=0)  
+    occupation = db.Column(db.String(100), nullable=False)  
+    salary = db.Column(db.Float(), nullable=False)
 
 
     
